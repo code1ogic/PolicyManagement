@@ -1,0 +1,160 @@
+<div class="container col-md-6">
+    <h1 Style="color:rgb(70, 112, 190);">SearchPolicy</h1><br>
+
+<form >
+        <div class="form-group form">
+            <label>Policy Type</label>
+            <select class="form-control" name="policytype" id="policytype" [(ngModel)]="admin.policytype">
+                <option>--Please select--</option>
+                <option>Vehicle Insurance</option>
+                <option>Travel Insurance</option>
+                <option>Life Insurance</option>
+                <option>Health Insurance</option>
+                <option>Child Plans</option>
+                <option>Retirement Plans</option>
+           </select>
+            <p align:right>
+                <button class="btn btn-primary" type="submit" (click)="getPolicyByType()">Search</button>
+            </p>
+        </div>
+
+
+        <br>
+
+
+        <div class="form-group form">
+            <label>Number of years</label>
+            <input type="text" class="form-control" id="duration" name="duration" placeholder="Enter No of years(duration)" [(ngModel)]="admin.duration">
+            <p align:right>
+                <button class="btn btn-primary" type="submit" (click)="getPolicyByDuration()">Search</button>
+            </p>
+        </div>
+
+
+        <br>
+
+
+        <div class="form-group form">
+            <label>Company Name</label>
+            <input type="text" class="form-control" id="company" name="company" placeholder="Enter Company name" [(ngModel)]="admin.company">
+            <p align:right>
+                <button class="btn btn-primary" type="submit" (click)="getPolicyByCompany()">Search</button>
+            </p>
+        </div>
+
+
+        <br>
+
+
+        <div class="form-group form">
+            <label>Policy Id</label>
+            <input type="text" class="form-control" id="policyid" name="policyid" placeholder="Enter Policy id" [(ngModel)]="admin.policyid">
+            <p align:right>
+                <button class="btn btn-primary" type="submit" (click)="getPolicyById()">Search</button>
+            </p>
+        </div>
+
+
+        <br>
+
+
+        <div class="form-group form">
+            <label>Policy Name</label>
+            <input type="text" class="form-control" id="policyname" name="policyname" placeholder="Enter Policy name" [(ngModel)]="admin.policyname">
+            <p align:center>
+                <button class="btn btn-primary" type="submit" (click)="getPolicyByName()">Search</button>
+            </p>
+        </div>
+
+
+    <br><br>
+</form>
+</div>
+    <div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Policy Id</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Policy Name</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Date</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Duration</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Company Name</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Initial Deposit</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Policy Type</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">User Type</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Terms Per Year</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Term Amount</th>
+                    <th  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">Interest</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngIf="policyList.length == 0" >
+                    <h2 style="text-align: center; opacity: 50%;">No Data found</h2>
+                 </tr>
+                 <tr *ngFor="let admin of policyList">
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.policyid}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.policyname}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.date}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.duration}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.company}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.initialdeposit}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.policytype}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.usertype}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.termsperyear}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.termamount}}</td>
+                    <td style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: medium;">{{admin.interest}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+<!--<div class="container col-md-6">
+    <h1 Style="color:rgb(70, 112, 190);">Search policy page</h1>
+    <h6>( Give details to search policy )</h6><br>
+
+    <form>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Number of years</label>
+            <input type="text" class="form-control" id="numberofyears" name="numberofyears" placeholder="Enter your Number of years">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Company Name</label>
+            <input type="text" class="form-control" id="company" name="company" placeholder="Enter your Company Name">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlSelect1">Policy Type</label>
+            <select class="form-control" name="policytype" id="policytype">
+              <option>--Please select--</option>
+              <option>Vehicle Insurance</option>
+              <option>Travel Insurance</option>
+              <option>Life Insurance</option>
+              <option>Health Insurance</option>
+              <option>Child Plans</option>
+              <option>Retirement Plans</option>
+             </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Policy Id</label>
+            <input type="text" class="form-control" id="policyId" name="policyId" placeholder="Enter your Policy Id">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Policy Name</label>
+            <input type="text" class="form-control" id="policyname" name="policyname" placeholder="Enter your Policy Name">
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+
+    </form>
+</div>-->

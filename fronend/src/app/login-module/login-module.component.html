@@ -1,0 +1,28 @@
+<br><br><br><br><div class="container"  style="width: 100%;">
+    <form> <!--#custForm="ngForm" (ngSubmit)="onLogin(custForm)" ngNativeValidate-->
+        <h2 style="text-align: center;font-weight: lighter; font-family:Verdana, Geneva, Tahoma, sans-serif, sans-serif; color:black">Get Started!! <br> Login to SearchPolicies :)</h2><br>
+        <div class="form-group row UserName" style="width: 80%;">
+            <label for="userid" class="col-sm-2 col-form-label">Email Id</label>
+            <div class="col-sm-10">
+                <input name="userid" type="email" class="form-control" id="userid" placeholder="Enter your Emailid" ngModel required pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]">
+            </div>
+        </div>
+        <br>
+        <!--<div class="form-group row Password" style="width: 80%;">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input name="password" type="password" class="form-control" id="password" placeholder="Password" ngModel> 
+            </div>
+        </div>-->
+        <br>
+        <div class="text-center row" style=" justify-content:center; align-items: center ;margin-left: 5%;">
+            <div class="col-sm-6 text-right" >
+
+                <button name="submit" type="submit" style="width: 70%;" class="btn btn-secondary" routerLink='/search-policy'>Login</button>
+            </div>
+        </div>
+        <br>
+        
+    </form>
+
+</div>

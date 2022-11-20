@@ -1,0 +1,73 @@
+
+
+<div class="container col-md-6">
+    <h1 Style="color:rgb(70, 112, 190);">Customer Registration page</h1><br>
+</div>
+
+   
+
+     
+
+<div class="container col-md-6">
+    <form (ngSubmit)="userRegister()">
+       
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter your First Name" [(ngModel)]="user.firstname">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your Last Name" [(ngModel)]="user.lastname">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">DOB</label>
+            <input type="date" class="form-control" id="dob" name="dob" aria-desceribedby="emailHelp" required [(ngModel)]="user.dob">
+        </div>
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Address</label>
+            <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" [(ngModel)]="user.address">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">ContactNumber</label>
+            <input type="text" class="form-control" id="contactnumber" name="contactnumber" placeholder="Enter ContactNumer" [(ngModel)]="user.contactnumber">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" [(ngModel)]="user.email">
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity">Salary :</label>
+            <input type="number" id="quantity" name="salary" min="1" max="50000000000" [(ngModel)]="user.salary">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">PAN Number</label>
+            <input type="text" class="form-control" id="pannumber" name="pannumber" placeholder="Enter your PanNumer" [(ngModel)]="user.pannumber">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlSelect1">Employer Type</label>
+            <select class="form-control" name=employertype id="employertype" onchange="enable(this)" [(ngModel)]="user.employertype">
+              <option value="">Please select</option>
+              <option value="1">Salaried</option>
+              <option value="2">Self-Employee</option>
+             </select>
+          </div>
+          
+          <div class="mb-3">
+            <!--<label for="formGroupExampleInput">Employer</label>--> 
+            <input type="text" class="d-none" id="employeetype" placeholder="Enter Your Name.. ">
+          </div>
+       <br>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,69 @@
+<div class="container col-md-6">
+    <h1 Style="color:rgb(70, 112, 190);">Policy Registration Page</h1><br>
+    <form (ngSubmit)="policyRegister()" >
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Policy Name</label>
+            <input type="text" class="form-control" id="policyname" name="policyname" placeholder="Enter your Policy Name" [(ngModel)]="admin.policyname">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+            <input type="date" id="date" name="date" class="form-control" max='2090-05-23' min="2022-10-31" [(ngModel)]="admin.date">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Duration</label>
+            <input type="text" class="form-control" id="duration" name="duration" placeholder="Enter Duration years" [(ngModel)]="admin.duration">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Company</label>
+            <input type="text" class="form-control" id="company" name="company" placeholder="Enter Company Name" [(ngModel)]="admin.company">
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity">Initial Deposit<br></label>
+            <input type="number" id="initialdeposit" name="initialdeposit" min="1" max="50000000000" [(ngModel)]="admin.initialdeposit">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlSelect1">Policy Type</label>
+            <select class="form-control" name="policytype" id="policytype" [(ngModel)]="admin.policytype">
+              <option>--Please select--</option>
+              <option>Vehicle Insurance</option>
+              <option>Travel Insurance</option>
+              <option>Life Insurance</option>
+              <option>Health Insurance</option>
+              <option>Child Plans</option>
+              <option>Retirement Plans</option>
+             </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">UserType</label>
+            <input type="text" class="form-control" id="usertype" name="usertype" placeholder="User type for policy" [(ngModel)]="admin.usertype">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Terms per year</label>
+            <input type="text" class="form-control" id="termsperyear" name="termsperyear" placeholder="Enter No of payment terms per year" [(ngModel)]="admin.termsperyear">
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity">Term amount(One term's payment amount)<br></label>
+            <input type="number" id="termamount" name="termamount" min="1" max="50000000000" [(ngModel)]="admin.termamount">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Interest</label>
+            <input type="text" class="form-control" id="interest" name="interest" placeholder="Enter No of payment terms per year" [(ngModel)]="admin.interest">
+        </div>
+        
+        <br>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        
+    </form>
+</div>
