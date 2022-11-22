@@ -14,7 +14,7 @@ import com.app.model.Admin;
 @Repository
 public interface AdminRepo extends JpaRepository<Admin,String>{
 	
-	@Query("SELECT a FROM Admin a WHERE a.policyid = ?1, ?2")
+	@Query("SELECT a FROM Admin a WHERE a.policyid = ?1")
 	Optional<Admin> findPolicyById(String policyid);
 
 	@Query("SELECT a FROM Admin a WHERE a.policyname = ?1")

@@ -7,8 +7,8 @@ import { Admin } from './admin';
   providedIn: 'root'
 })
 export class PolicyService {
-  baseUrl="http://localhost:8082/admin"
-  constructor(private httpClient: HttpClient) { 
+  baseUrl="http://localhost:8082/api/v1.0/admin"
+  constructor(private httpClient: HttpClient) {
 
   }
 
@@ -17,5 +17,5 @@ export class PolicyService {
     return this.httpClient.post(`${this.baseUrl}`,admin);
 
   }
-  
+
 }
